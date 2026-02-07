@@ -1,0 +1,52 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+html,
+body{
+  height: 100%;
+  width: 100%;
+}
+
+.div2{
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.input1{
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+}
+
+.input2{
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+}
+
+.btnDiv{
+  display: flex;
+  justify-self: center;
+  margin: 10px;
+  padding: 10px;
+}
+
+.btn{
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+.btn:hover{
+  padding: 12px;
+  transition: 0.3s ease-in-out;
+  font-size: 15px;
+}
