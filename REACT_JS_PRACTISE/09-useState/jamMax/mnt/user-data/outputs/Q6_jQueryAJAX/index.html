@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Q6 - jQuery AJAX</title>
+</head>
+<body>
+  <h2>jQuery AJAX Demo</h2>
+  <button id="loadData">Load Data</button>
+  <div id="result"></div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $("#loadData").click(function() {
+      $.ajax({
+        url: "https://jsonplaceholder.typicode.com/posts/1",
+        type: "GET",
+        success: function(data) {
+          $("#result").html("<b>Title:</b> " + data.title + "<br><b>Body:</b> " + data.body);
+        },
+        error: function() {
+          $("#result").text("Error loading data.");
+        }
+      });
+    });
+  </script>
+</body>
+</html>

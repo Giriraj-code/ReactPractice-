@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Q1 - DOM & Events</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    #box { width: 200px; height: 100px; background: lightblue; text-align: center; line-height: 100px; margin: 10px 0; }
+    input { padding: 5px; margin: 5px; }
+    button { padding: 5px 10px; margin: 5px; }
+  </style>
+</head>
+<body>
+  <h2>DOM Manipulation & Event Handling</h2>
+  <div id="box">Click Me</div>
+  <button id="changeText">Change Text</button>
+  <button id="changeColor">Change Color</button>
+  <button id="addItem">Add List Item</button>
+  <input type="text" id="inputBox" placeholder="Type something..." />
+  <p id="output"></p>
+  <ul id="myList"></ul>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $("#box").click(function() {
+      $(this).toggle();
+    });
+
+    $("#changeText").click(function() {
+      $("#box").text("Text Changed!").show();
+    });
+
+    $("#changeColor").click(function() {
+      $("#box").css("background-color", "salmon");
+    });
+
+    $("#addItem").click(function() {
+      $("#myList").append("<li>New Item</li>");
+    });
+
+    $("#inputBox").keyup(function() {
+      $("#output").text("You typed: " + $(this).val());
+    });
+  </script>
+</body>
+</html>

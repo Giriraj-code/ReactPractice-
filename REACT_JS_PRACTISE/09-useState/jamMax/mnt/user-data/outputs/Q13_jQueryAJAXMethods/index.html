@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Q13 - jQuery AJAX Methods</title>
+</head>
+<body>
+  <h2>jQuery AJAX Methods</h2>
+
+  <button id="ajaxBtn">$.ajax()</button>
+  <button id="getBtn">$.get()</button>
+  <button id="postBtn">$.post()</button>
+
+  <div id="output" style="margin-top:15px; border:1px solid #ccc; padding:10px;"></div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $("#ajaxBtn").click(function() {
+      $.ajax({
+        url: "https://jsonplaceholder.typicode.com/posts/1",
+        type: "GET",
+        dataType: "json",
+        success: function(data) {
+          $("#output").html("<b>$.ajax() Result:</b><br>Title: " + data.title);
+        },
+        error: function() {
+          $("#output").text("Error!");
+        }
+      });
+    });
+
+    $("#getBtn").click(function() {
+      $.get("https://jsonplaceholder.typicode.com/posts/2", function(data) {
+        $("#output").html("<b>$.get() Result:</b><br>Title: " + data.title);
+      });
+    });
+
+    $("#postBtn").click(function() {
+      $.post("https://jsonplaceholder.typicode.com/posts", {
+        title: "Test Post",
+        body: "This is body",
+        userId: 1
+      }, function(data) {
+        $("#output").html("<b>$.post() Result:</b><br>New ID: " + data.id);
+      });
+    });
+  </script>
+</body>
+</html>
