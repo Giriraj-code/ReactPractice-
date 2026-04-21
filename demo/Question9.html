@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<style>
+    body{
+        display: flex;
+        justify-content:center;
+        padding: 50px;
+    }
+    .card{
+        background: #dadada;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    h1{
+        background: #9c9c9c;
+        padding: 5px;
+        border-radius: 5px;
+
+    }
+
+    .info{
+        background: #9c9b9b;
+        border-radius: 5px;
+        padding: 1px;
+    }
+</style>
+
+</head>
+
+<body>
+    <div class="card">
+        <h1>Student Profile</h1>
+        <button class="showBtn"> Show my details</button>
+        <div class="info">
+            <p><b>Name: </b>Ramu</p>
+            <p><b>Course: </b>MCA</p>
+            <p><b>Favorite Subject: </b>Web Technology</p>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $(".showBtn").click(function(){
+                $(".info").slideToggle(500);
+                $(this).text($(".info").is("visible") ? "Hide Details":"Show my details");
+            });
+        });
+    </script>
+</body>
+
+</html>

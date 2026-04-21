@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Q9 JSP Login</title>
+</head>
+<body>
+
+  <h2>Login</h2>
+
+  <input type="text" id="user" placeholder="Username" /><br/><br/>
+  <input type="password" id="pass" placeholder="Password" /><br/><br/>
+  <button onclick="login()">Login</button>
+
+  <p id="msg"></p>
+
+  <script>
+    function login() {
+      var u = document.getElementById("user").value;
+      var p = document.getElementById("pass").value;
+
+      if (u === "admin" && p === "1234") {
+        document.getElementById("msg").style.color = "green";
+        document.getElementById("msg").innerHTML = "Login Successful! Welcome " + u;
+      } else {
+        document.getElementById("msg").style.color = "red";
+        document.getElementById("msg").innerHTML = "Invalid Username or Password!";
+      }
+    }
+  </script>
+
+  <!--
+  JSP CODE (login.jsp) - Run on Tomcat:
+
+  <%@ page language="java" contentType="text/html; charset=UTF-8" %>
+  <%
+    String username = request.getParameter("username");
+    String password = request.getParameter("password");
+    if (username != null && password != null) {
+      if (username.equals("admin") && password.equals("1234")) {
+        session.setAttribute("user", username);
+  %>
+        <h3>Welcome, <%= username %>!</h3>
+  <%
+      } else {
+  %>
+        <h3>Invalid credentials!</h3>
+  <%
+      }
+    } else {
+  %>
+    <form method="post" action="login.jsp">
+      Username: <input type="text" name="username" /><br/>
+      Password: <input type="password" name="password" /><br/>
+      <input type="submit" value="Login" />
+    </form>
+  <% } %>
+  -->
+
+</body>
+</html>

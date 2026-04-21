@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Q13 CSS Animation</title>
+  <style>
+    .box {
+      width: 80px;
+      height: 80px;
+      background: red;
+      position: relative;
+      animation: move 2s linear infinite;
+    }
+
+    @keyframes move {
+      from { left: 0px; }
+      to   { left: 500px; }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Moving Box</h2>
+  <div class="box"></div>
+
+</body>
+</html>

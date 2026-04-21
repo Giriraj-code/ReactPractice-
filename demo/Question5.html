@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <button id="Click">Click</button>
+    <button id="DBClick">Double Click</button>
+    <button id="HoverMe">Hover Me</button>
+    <button id="One Time">One Time</button>
+
+
+    <p id="output"></p>
+    <script>
+        $(document).ready(function(){
+            $("#Click").click(function(){
+                $("#output").text("You Clicked the Button");
+            });
+
+            $("#DBClick").click(function(){
+                $().dblclick(function(){
+                    $("#output").text("You Double Clicked the Button");
+                });
+
+            $("#HoverMe").hover(function(){
+                $("#output").text("You Hovered the Button");
+            });
+
+            
+            })
+        })
+    </script>
+</body>
+
+</html>

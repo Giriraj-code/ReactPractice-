@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Q10 Student Registration</title>
+</head>
+<body>
+
+  <h2>Student Registration</h2>
+
+  <form onsubmit="return validate()">
+
+    Name: <br/>
+    <input type="text" id="name" /><br/><br/>
+
+    Email: <br/>
+    <input type="email" id="email" /><br/><br/>
+
+    Course: <br/>
+    <select id="course">
+      <option value="">Select Course</option>
+      <option>MCA</option>
+      <option>BCA</option>
+      <option>BSc CS</option>
+    </select><br/><br/>
+
+    Gender: <br/>
+    <input type="radio" name="gender" value="Male" /> Male
+    <input type="radio" name="gender" value="Female" /> Female<br/><br/>
+
+    <input type="submit" value="Register" />
+
+  </form>
+
+  <p id="msg"></p>
+
+  <script>
+    function validate() {
+      var name   = document.getElementById("name").value;
+      var email  = document.getElementById("email").value;
+      var course = document.getElementById("course").value;
+      var gender = document.querySelector('input[name="gender"]:checked');
+
+      if (name === "") {
+        document.getElementById("msg").innerHTML = "Name is required";
+        return false;
+      }
+      if (email === "") {
+        document.getElementById("msg").innerHTML = "Email is required";
+        return false;
+      }
+      if (course === "") {
+        document.getElementById("msg").innerHTML = "Select a course";
+        return false;
+      }
+      if (!gender) {
+        document.getElementById("msg").innerHTML = "Select gender";
+        return false;
+      }
+
+      alert("Registration Successful!");
+      return false;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Q2 Append Prepend</title>
+</head>
+<body>
+
+  <input type="text" id="item" placeholder="Enter item" />
+  <button id="btn1">Append</button>
+  <button id="btn2">Prepend</button>
+
+  <ul id="list">
+    <li>Item 1</li>
+    <li>Item 2</li>
+  </ul>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $("#btn1").click(function() {
+      var val = $("#item").val();
+      $("#list").append("<li>" + val + "</li>");
+    });
+
+    $("#btn2").click(function() {
+      var val = $("#item").val();
+      $("#list").prepend("<li>" + val + "</li>");
+    });
+  </script>
+
+</body>
+</html>

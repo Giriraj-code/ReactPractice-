@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+<h2>Ajax demo woth jquery</h2>
+<button id="loadData">Load</button>
+<div id="result"></div>
+<script>
+        $(document).ready(function(){
+            $("#loadData").click(function(){
+                $.ajax({
+                    url: "https://jsonplaceholder.typicode.com/todos/1",
+                    type: "GET",
+                    success:function(data){
+                        $("#result").html("<p>Tittle:</p>" +data.title + "<p>Compleated :</p>"+data.completed) +"<p>Body :</p>"+data.body;
+                    },
+                    error:function(){
+                        $("#result").html("<p>An error has occurred</p>");
+                    }
+                })
+            })
+        });
+</script>
+</body>
+
+</html>
